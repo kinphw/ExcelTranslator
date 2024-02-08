@@ -1,0 +1,52 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="ET_onLoad"> 
+    <ribbon>
+        <tabs>
+            <tab id="tabET" label="엑셀번역기"> <!--  insertAfterMso="TabHome"> -->
+                <group id="groupET1" label="기본설정">
+                        
+                        <menu id="menuETLang" itemSize="normal" getLabel="GetLabelLang" >  <!-- label="NOW"-->
+                            <button id="btnETLangEnKo" label="영한" onAction="SetLang1" /> <!-- imageMso="Diamond" /> -->
+                            <button id="btnETLangKoEn" label="한영" onAction="SetLang2" /> <!--  imageMso="Club" />  -->
+                            <!-- onAction="SubButton1_onAction"/>  -->
+                        </menu> 
+
+                        <menu id="menuETDir" itemSize="normal" getLabel="GetLabelDir" >
+                            <button id="btnETDirNow" label="현재셀" imageMso= "Repeat" onAction="SetDir1" /> <!-- imageMso="Diamond" /> -->
+                            <button id="btnETDirRight" label="우측셀" imageMso= "RightArrow2"  onAction="SetDir2" /> <!--  imageMso="Club" />  -->                            
+                            <button id="btnETDirDown" label="아래셀" imageMso="DownArrow2"   onAction="SetDir3" /> <!--  imageMso="Club" />  -->                            
+                        </menu> 
+                </group>
+
+                <group id="groupET2" label="실행">                
+
+                    <button id="btnETExeCell"  
+                        size="large" 
+                        label="셀 번역"
+                        imageMso="Translate"
+                        onAction="ET_Exe" 
+                        screentip="번역"
+                        supertip="선택한 셀을 번역합니다."/>
+
+                    <button id="btnETExeObj"  
+                        size="large" 
+                        label="개체 번역"
+                        imageMso="ControlRectangle"
+                        onAction="ET_Exe_Obj" 
+                        screentip="도형개체번역"
+                        supertip="선택한 도형개체 내용을 번역합니다."/>                            
+
+                </group>                
+
+                <group id= "groupET3" label="Help">
+                    <button id="btnETHelp"  
+                        size="large" 
+                        imageMso="Help"
+                        onAction="ET_Help.ET_Help" 
+                        screentip="설명"
+                        supertip="Help"/>
+                </group>
+
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>
